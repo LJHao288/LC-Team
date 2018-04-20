@@ -25,11 +25,13 @@ public class server : MonoBehaviour
 
         //startserver();
         //开启服务器
+	      //开启服务器
         start.onClick.AddListener(Start1);
         clients();
         //显示已连接的clients
         //刷新聊天记录
     }
+
 
     // Update is called once per frame
     void Update()
@@ -143,7 +145,6 @@ public class server : MonoBehaviour
         BroadCast(c.clientName + ": \r\n" + data, client);
     }
 
-
     public void Start1()
     {
         //启动服务器
@@ -152,7 +153,8 @@ public class server : MonoBehaviour
         if (breaks.text.Equals("break server"))
         {
 
-            breaks.text = "start server";
+
+            breaks.text = "start server";         
             server.text = "";
         }
         else
@@ -161,11 +163,9 @@ public class server : MonoBehaviour
             server.text = "server started.";
             breaks.text = "break server";
         }
-
+        
 
         //breaked server
-
-
     }
     public void clients()
     {   /*
@@ -185,6 +185,7 @@ public class server : MonoBehaviour
     }
 }
 
+
 public class ServerClient
 {
     public TcpClient tcp;
@@ -196,3 +197,4 @@ public class ServerClient
     }
 
 }
+
