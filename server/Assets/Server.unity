@@ -416,7 +416,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 205.92326}
+  m_AnchoredPosition: {x: 0, y: -0.000013403607}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &731402095
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1489610813}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.4371482
+  m_Size: 0.9999954
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1108,7 +1108,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: sadsadsadddddddddddssd
 --- !u!222 &1091279873
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 1166065510}
   - component: {fileID: 1166065509}
   m_Layer: 5
-  m_Name: messages
+  m_Name: massages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1182,7 +1182,49 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'asd222222222222222222222222222
+
+    sadsad
+
+    sa
+
+    dsa
+
+    d
+
+    sad
+
+    asdasd
+
+    as
+
+    d
+
+    asd
+
+    sa
+
+    d
+
+    sad
+
+    sa
+
+    d
+
+    asd
+
+    sa
+
+    d
+
+    asd
+
+    sa
+
+    d
+
+    sad'
 --- !u!222 &1166065510
 CanvasRenderer:
   m_ObjectHideFlags: 0
