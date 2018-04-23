@@ -9,6 +9,7 @@ using System.IO;
 
 public class server : MonoBehaviour
 {
+    string a = "";
     public Button start;
     public int port = 4321;
 
@@ -141,8 +142,12 @@ public class server : MonoBehaviour
     private void OnIncomingData(ServerClient c, string data)
     {
         Debug.Log(c.clientName + ": \r\n" + data);
+        
+        a += c.clientName + ": \r\n" +  data+"\r\n";
+        Text m = GameObject.Find("messages").GetComponent<Text>();
+        m.text = a;
 
-        BroadCast(c.clientName + ": \r\n" + data, client);
+        BroadCast(c.clientName + ":   " + data , client);
     }
 
     public void Start1()
