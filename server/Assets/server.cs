@@ -159,12 +159,15 @@ public class server : MonoBehaviour
         {
             breaks.text = "start server";
             server.text = "";
+            Text hs = GameObject.Find("messages").GetComponent<Text>();
+            hs.text = "";
         }
         else
         {
             startserver();
             server.text = "server started.";
             breaks.text = "break server";
+            
         }
 
         //breaked server
