@@ -26,12 +26,17 @@ public class server : MonoBehaviour
 
         //startserver();
         //开启服务器
+<<<<<<< HEAD
         //开启服务器
+=======
+	      //开启服务器
+>>>>>>> 1b920a04043729539acc4cca3caa86913fff9418
         start.onClick.AddListener(Start1);
         clients();
         //显示已连接的clients
         //刷新聊天记录
     }
+
 
     // Update is called once per frame
     private void Update()
@@ -154,9 +159,12 @@ public class server : MonoBehaviour
         Text m = GameObject.Find("messages").GetComponent<Text>();
         m.text = a;
 
+<<<<<<< HEAD
         BroadCast(c.clientName + ":   " + data , client);
     }
 
+=======
+>>>>>>> 1b920a04043729539acc4cca3caa86913fff9418
     public void Start1()
     {
         //启动服务器
@@ -164,7 +172,13 @@ public class server : MonoBehaviour
         Text breaks = GameObject.Find("break").GetComponent<Text>();
         if (breaks.text.Equals("break server"))
         {
+<<<<<<< HEAD
             breaks.text = "start server";
+=======
+
+
+            breaks.text = "start server";         
+>>>>>>> 1b920a04043729539acc4cca3caa86913fff9418
             server.text = "";
             Text hs = GameObject.Find("messages").GetComponent<Text>();
             hs.text = "";
@@ -176,6 +190,10 @@ public class server : MonoBehaviour
             breaks.text = "break server";
             
         }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 1b920a04043729539acc4cca3caa86913fff9418
 
         //breaked server
     }
@@ -199,6 +217,7 @@ public class server : MonoBehaviour
     }
 }
 
+
 public class ServerClient
 {
     public TcpClient tcp;
@@ -209,4 +228,10 @@ public class ServerClient
         clientName = "New user";
         tcp = clientSocket;
     }
+<<<<<<< HEAD
 }
+=======
+
+}
+
+>>>>>>> 1b920a04043729539acc4cca3caa86913fff9418
