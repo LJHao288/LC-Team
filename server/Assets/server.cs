@@ -1,11 +1,10 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Net.Sockets;
-using System;
-using System.Net;
-using System.IO;
 
 public class server : MonoBehaviour
 {
@@ -19,23 +18,22 @@ public class server : MonoBehaviour
     private bool serverStarted;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         client = new List<ServerClient>();
         dis = new List<ServerClient>();
 
         //startserver();
         //开启服务器
-	      //开启服务器
+        //开启服务器
         start.onClick.AddListener(Start1);
         clients();
         //显示已连接的clients
         //刷新聊天记录
     }
 
-
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!serverStarted)
             return;
@@ -64,7 +62,6 @@ public class server : MonoBehaviour
                     }
                 }
             }
-
         }
     }
 
@@ -125,15 +122,18 @@ public class server : MonoBehaviour
         BroadCast(client[client.Count - 1].clientName + " has connected !", client);
     }
 
-    private void BroadCast(string data, List<ServerClient> cl) {
-        foreach (ServerClient c in cl) {
+    private void BroadCast(string data, List<ServerClient> cl)
+    {
+        foreach (ServerClient c in cl)
+        {
             try
             {
                 StreamWriter writer = new StreamWriter(c.tcp.GetStream());
                 writer.WriteLine(data);
                 writer.Flush();
             }
-            catch(Exception e) {
+            catch (Exception e)
+            {
                 Debug.Log("Error is :" + e.Message + "send it to client" + c.clientName);
             }
         }
@@ -157,21 +157,22 @@ public class server : MonoBehaviour
         Text breaks = GameObject.Find("break").GetComponent<Text>();
         if (breaks.text.Equals("break server"))
         {
-
-
-            breaks.text = "start server";         
+            breaks.text = "start server";
             server.text = "";
+            Text hs = GameObject.Find("messages").GetComponent<Text>();
+            hs.text = "";
         }
         else
         {
             startserver();
             server.text = "server started.";
             breaks.text = "break server";
+            
         }
-        
 
         //breaked server
     }
+
     public void clients()
     {   /*
         if( ){
@@ -179,27 +180,26 @@ public class server : MonoBehaviour
             clients.text = "clienr address";
         }*/
     }
+
     public void massage()
     {
         /*
          if(){
               Text massages = GameObject.Find("massages").GetComponent<Text>();
-            clients.text = "chat massages"; 
+            clients.text = "chat massages";
          }
          */
     }
 }
 
-
 public class ServerClient
 {
     public TcpClient tcp;
     public string clientName;
+
     public ServerClient(TcpClient clientSocket)
     {
         clientName = "Chen";
         tcp = clientSocket;
     }
-
 }
-
