@@ -16,6 +16,7 @@ public class server : MonoBehaviour
     private List<ServerClient> dis;
     private TcpListener ser;
     private bool serverStarted;
+    string old;
 
     // Use this for initialization
     private void Start()
@@ -142,7 +143,18 @@ public class server : MonoBehaviour
     private void OnIncomingData(ServerClient c, string data)
     {
         Debug.Log(c.clientName + ": \r\n" + data);
-        
+
+        if (data.Contains("&Name"))
+        {
+            old = c.clientName;
+            c.clientName = data.Split('|')[1];
+            BroadCast(" '" + old + " '" + " rename to :" + c.clientName, client);
+            a += old + " rename to: " + c.clientName + "\r\n";
+            Text d = GameObject.Find("messages").GetComponent<Text>();
+            d.text = a;
+            return;
+        }
+
         a += c.clientName + ": \r\n" +  data+"\r\n";
         Text m = GameObject.Find("messages").GetComponent<Text>();
         m.text = a;
@@ -199,7 +211,7 @@ public class ServerClient
 
     public ServerClient(TcpClient clientSocket)
     {
-        clientName = "Chen";
+        clientName = "new user";
         tcp = clientSocket;
     }
 }
